@@ -120,7 +120,7 @@ class CoinShuffleClient:
         return t
 
     def perform_shuffle(self, sources, data):
-        print type(sources)
+        print(type(sources))
         sources = json.loads(sources)
         data = json.loads(data)
         assert self.index == len(data)
@@ -148,5 +148,6 @@ class CoinShuffleClient:
             source = sources[str(i)]
             ins[str(i)]  = {'amount' : self.amount, 'addr': source}
             outs[str(i)] = {'amount' : self.amount, 'addr': tx['target']}
-        print ins, outs
+        print(ins)
+        print(outs)
         self.node.new_multi_tx(ins, outs)
