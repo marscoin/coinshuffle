@@ -31,10 +31,10 @@ class Transaction:
 
     def validate(self):
         if self.data_hash != self._hash_data():
-            print "ERROR: Invalid data hash in " + str(self)
+            print("ERROR: Invalid data hash in " + str(self))
             return False
         if self.hash != self._hash():
-            print "ERROR: Invalid hash in " + str(self)
+            print("ERROR: Invalid hash in " + str(self))
             return False
         return True
 
@@ -100,10 +100,10 @@ class Block:
     def _validate_items(self):
         for i,v in enumerate(self.items):
             if not v.validate():
-                print "Invalid Block transaction validation failed"
+                print("Invalid Block transaction validation failed")
                 return False
             if i > 0 and v.phash != self.items[i-1].hash:
-                print "Invalid Block transaction hash in block " + str(self)
+                print("Invalid Block transaction hash in block " + str(self))
                 return False
         return True
 
@@ -140,7 +140,7 @@ class Block:
     @classmethod
     def deserialize(cls, d):
         if type(d) is not dict:
-            print type(d)
+            print(type(d))
             d = json.loads(d)
         b = Block(d['proof'], d['phash'])
         b.time = d['time']

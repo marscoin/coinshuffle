@@ -40,7 +40,7 @@ class Block(Resource):
         if node.chain.is_addable(b):
             node.chain.add(b)
         else:
-            print "Received non appliable block, discarding"
+            print("Received non appliable block, discarding")
         return b.serialize(), 201
 
 class Chain(Resource):

@@ -35,8 +35,8 @@ if __name__ == "__main__":
     msg = "helloworld"
     emsg = encrypt(pubkey, msg)
     dmsg = decrypt(keypair, emsg)
-    print pubkey
-    print msg
-    print emsg
-    print dmsg
+    print(pubkey)
+    print(msg)
+    print(emsg)
+    print(dmsg)
 
