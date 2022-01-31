@@ -122,7 +122,7 @@ api.add_resource(StartShuffler, '/coinshuffle/initiate')
 if __name__ == '__main__':
     from argparse import ArgumentParser
     parser = ArgumentParser()
-    parser.add_argument('-p', '--port', default=5000, type=int, help = "Application port")
+    parser.add_argument('-p', '--port', default=6000, type=int, help = "Application port")
     parser.add_argument('--peers', nargs='*', help="Peers to add")
     parser.add_argument('-c', '--coin-shuffle-address', type=str, help= "Address of coin shuffle coordinator")
     args = parser.parse_args()
