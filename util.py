@@ -1,6 +1,7 @@
 import json
 from Crypto import Random
 from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5 as Cipher_PKCS1_v1_5
 from binascii import hexlify, unhexlify
 def pack_tx(source, target, amount):
     return json.dumps({'source': str(source), 'target': str(target), 'amount': str(amount)})
@@ -23,10 +24,17 @@ def public_key(keypair):
     return hexlify(keypair.publickey().exportKey('DER'))
 
 def encrypt(epkey, msg):
-    return hexlify(RSA.importKey(unhexlify(str(epkey))).encrypt(str(msg), 'x')[0])
+    key_pub = RSA.importKey(unhexlify(str(epkey)))
+    cipher = Cipher_PKCS1_v1_5.new(key_pub)
+    print(str(msg).encode())
+    return hexlify(cipher.encrypt(str(msg).encode()))
+    #return hexlify(RSA.importKey(unhexlify(str(epkey))).encrypt(str(msg), 'x')[0])
     
 def decrypt(keypair, emsg):
-    return keypair.decrypt(unhexlify(emsg))
+    key_priv = RSA.importKey(keypair.read())
+    decipher = Cipher_PKCS1_v1_5.new(key_priv)
+    return decipher.decrypt(unhexlify(emsg), None).decode()
+    #return keypair.decrypt(unhexlify(emsg))
 
 if __name__ == "__main__":
     # Test encryption

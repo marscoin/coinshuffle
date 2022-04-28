@@ -1,3 +1,4 @@
+import flask
 from flask import Flask
 from flask_restful import Api, Resource, reqparse, abort
 from coin_shuffle import CoinShuffleServer
@@ -32,7 +33,7 @@ class CoinShuffleReset(Resource):
         server.reset()
 
 def run():
-    app = Flask(__name__)
+    app = flask.Flask(__name__)
     api = Api(app)
     api.add_resource(Keys, '/coinshuffle/submitkey')
     api.add_resource(CoinShuffle, '/coinshuffle/start')
@@ -42,7 +43,7 @@ def run():
     parser = ArgumentParser()
     parser.add_argument('-p', '--port', default=5000, type=int, help = "Application port")
     args = parser.parse_args()
-    app.run(host='0.0.0.0', port=args.port)
+    app.run(host='0.0.0.0', port=args.port, debug=True)
 
 if __name__ == '__main__':
     run()

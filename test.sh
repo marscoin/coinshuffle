@@ -17,4 +17,4 @@ curl http://0.0.0.0:6001/chain | python3 -m json.tool
 
 sleep 3
 
-./kill.sh
+#./kill.sh

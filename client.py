@@ -1,3 +1,4 @@
+import flask
 from flask import jsonify, Flask, request
 from flask_restful import Api, Resource, abort, reqparse
 import json
@@ -132,3 +133,6 @@ if __name__ == '__main__':
             node.register_node(peer)
     app.run(host='0.0.0.0', port=args.port)
 
+#curl -d '{"source":"alice","target":"b","amount":"500"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6005/transactions/new
+#curl -d '{"source":"alice","hidden_target":"AlicePrime","server_addr": "http://127.0.0.1:6004"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6005/coinshuffle/new
+#curl -d '{"source":"bob","hidden_target":"BobPrime","server_addr": "http://127.0.0.1:6004"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6002/coinshuffle/new

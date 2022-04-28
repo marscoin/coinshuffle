@@ -22,8 +22,8 @@ class CoinShuffleServer:
     def start(self):
         """ 
         """
-        if self.started: # only start at most once
-            return None, False
+        #if self.started: # only start at most once
+        #    return None, False
         self.started = True
         response = {
                 "peers": {ek: addr for addr, ek in zip(self.peers, self.keys)},
@@ -116,6 +116,7 @@ class CoinShuffleClient:
     def _encrypt_dest(self):
         t = self.hidden_target
         for i in range(self.num_peers-1,self.index,-1):
+            print(t)
             t = util.encrypt(self.order[str(i)], t)
         return t
 
