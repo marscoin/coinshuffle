@@ -2,9 +2,9 @@
 c0=http://0.0.0.0:6000/
 c1=http://0.0.0.0:6001/
 c2=http://0.0.0.0:6002/
-python3 client.py -p 6000 --peers $c1 $c2 &
-python3 client.py -p 6001 --peers $c0 $c2 &
-python3 client.py -p 6002 --peers $c0 $c1 &
+nohup python3 client.py -p 6000 --peers $c1 $c2 &
+nohup python3 client.py -p 6001 --peers $c0 $c2 &
+nohup python3 client.py -p 6002 --peers $c0 $c1 &
 sleep 3
 echo "Now curl start"
 curl -d '{"source":"alice","target":"b","amount":"500"}' \

@@ -93,7 +93,7 @@ class CoinShuffleClient:
         return self.peers[self.order[str(self.index + 1)]]
 
     def _find_index(self, order):
-        for i,ek in order.iteritems():
+        for i,ek in order.items():
             if self.ek == ek:
                 return i
         return -1
@@ -101,13 +101,13 @@ class CoinShuffleClient:
     def _shuffle_data(self, data):
         new_order = list(np.random.permutation(len(data)))
         new_data = {}
-        for i,v in data.iteritems():
+        for i,v in data.items():
             new_data[str(new_order[int(i)])] = v
         return new_data.copy() # REVIEW: is copy necessary?
 
     def _decrypt_data(self, data):
         new_data = {}
-        for i,v in data.iteritems():
+        for i,v in data.items():
             vp = v.copy()
             vp["target"] = util.decrypt(self.keypair, v["target"])
             new_data[i] = vp
@@ -144,7 +144,7 @@ class CoinShuffleClient:
         new_data = {'in':{}, 'out':{}}
         ins = {}
         outs = {}
-        for i,tx in data.iteritems():
+        for i,tx in data.items():
             source = sources[str(i)]
             ins[str(i)]  = {'amount' : self.amount, 'addr': source}
             outs[str(i)] = {'amount' : self.amount, 'addr': tx['target']}
