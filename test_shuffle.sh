@@ -8,6 +8,8 @@ s4=${c}4
 
 nohup python3 client.py -p 6000 --peers $c1 $c2 &
 nohup python3 client.py -p 6001 --peers $c0 $c2 &
+nohup python3 client.py -p 6002 --peers $c0 $c1 &
+
 #nohup python3 shuffle_server.py -p 6004 &
 sleep 5
 echo "Shuffle start"

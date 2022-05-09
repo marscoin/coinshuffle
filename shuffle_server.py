@@ -43,7 +43,7 @@ def run():
     parser = ArgumentParser()
     parser.add_argument('-p', '--port', default=5000, type=int, help = "Application port")
     args = parser.parse_args()
-    app.run(host='0.0.0.0', port=args.port, debug=True)
+    app.run(host='127.0.0.1', port=args.port, debug=True)
 
 if __name__ == '__main__':
     run()

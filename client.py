@@ -127,12 +127,16 @@ if __name__ == '__main__':
     parser.add_argument('--peers', nargs='*', help="Peers to add")
     parser.add_argument('-c', '--coin-shuffle-address', type=str, help= "Address of coin shuffle coordinator")
     args = parser.parse_args()
-    node = Node(addr = 'http://0.0.0.0:' + str(args.port) + '/', csaddr = args.coin_shuffle_address)
+    node = Node(addr = 'http://127.0.0.1:' + str(args.port) + '/', csaddr = args.coin_shuffle_address)
     if args.peers is not None:
         for peer in args.peers:
             node.register_node(peer)
-    app.run(host='0.0.0.0', port=args.port)
+    app.run(host='127.0.0.1', port=args.port)
 
-#curl -d '{"source":"alice","target":"b","amount":"500"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6005/transactions/new
-#curl -d '{"source":"alice","hidden_target":"AlicePrime","server_addr": "http://127.0.0.1:6004"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6005/coinshuffle/new
+#curl -d '{"source":"alice","target":"b","amount":"500"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6001/transactions/new
+#curl -d '{"source":"alice","hidden_target":"AlicePrime","server_addr": "http://127.0.0.1:6004"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6001/coinshuffle/new
 #curl -d '{"source":"bob","hidden_target":"BobPrime","server_addr": "http://127.0.0.1:6004"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:6002/coinshuffle/new
+#curl http://127.0.0.1:6004/coinshuffle/start
+
+#curl http://127.0.0.1:6001/mine
+#curl http://127.0.0.1:6001/chain | python3 -m json.tool

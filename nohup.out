@@ -1745,3 +1745,985 @@ Traceback (most recent call last):
     raise ValueError("Plaintext is too long.")
 ValueError: Plaintext is too long.
 127.0.0.1 - - [28/Apr/2022 17:23:32] "[35m[1mPOST /coinshuffle/initiate HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "client.py", line 3, in <module>
+    from flask_restful import Api, Resource, abort, reqparse
+ModuleNotFoundError: No module named 'flask_restful'
+Traceback (most recent call last):
+  File "client.py", line 3, in <module>
+    from flask_restful import Api, Resource, abort, reqparse
+ModuleNotFoundError: No module named 'flask_restful'
+Traceback (most recent call last):
+  File "client.py", line 3, in <module>
+    from flask_restful import Api, Resource, abort, reqparse
+ModuleNotFoundError: No module named 'flask_restful'
+ * Serving Flask app "client" (lazy loading)
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Debug mode: off
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:6002/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:6001/ (Press CTRL+C to quit)
+127.0.0.1 - - [05/May/2022 11:18:36] "POST /coinshuffle/new HTTP/1.1" 201 -
+127.0.0.1 - - [05/May/2022 11:18:58] "POST /coinshuffle/new HTTP/1.1" 201 -
+[2022-05-05 11:21:55,682] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 11:21:55] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 11:22:03,948] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 11:22:03] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+127.0.0.1 - - [05/May/2022 11:32:46] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:33:02] "GET /chain HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:09] "GET /chain HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:18] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:20] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:20] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:21] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:22] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:22] "GET /mine HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:34:24] "GET /chain HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 11:35:17] code 400, message Bad request version ('\x98Ð')
+127.0.0.1 - - [05/May/2022 11:35:17] "l        MIT-MAGIC-COOKIE-1  KàY./gùa±	Ð" HTTPStatus.BAD_REQUEST -
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:6002/ (Press CTRL+C to quit)
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:6001/ (Press CTRL+C to quit)
+127.0.0.1 - - [05/May/2022 17:45:01] "POST /transactions/new HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2022 17:45:10] "POST /coinshuffle/new HTTP/1.1" 201 -
+127.0.0.1 - - [05/May/2022 17:45:21] "POST /coinshuffle/new HTTP/1.1" 201 -
+[2022-05-05 17:45:37,646] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:45:37] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:45:37,655] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:45:37] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:46:38,564] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:46:38] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:46:38,573] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:46:38] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:6001/ (Press CTRL+C to quit)
+ * Serving Flask app "client" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:6002/ (Press CTRL+C to quit)
+[2022-05-05 17:48:15,874] ERROR in app: Exception on /coinshuffle/new [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connection.py", line 140, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connectionpool.py", line 597, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connectionpool.py", line 356, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connection.py", line 149, in _new_conn
+    raise NewConnectionError(
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x7feeb85c4c70>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/adapters.py", line 413, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/connectionpool.py", line 648, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "/usr/local/lib/python3.8/dist-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=6004): Max retries exceeded with url: /coinshuffle/submitkey (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7feeb85c4c70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 90, in post
+    node.new_coin_shuffle(args['source'], args['hidden_target'],
+  File "/home/luke/Projects/coinshuffle/Node.py", line 62, in new_coin_shuffle
+    self.coin_shuffler = CoinShuffleClient(self, self.addr, source, hidden_target, server_addr)
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 63, in __init__
+    self.submit_ek_to_server(server_addr)
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 68, in submit_ek_to_server
+    requests.post(addr + '/coinshuffle/submitkey', data = {'public_key' : self.ek, 'address' : self.addr})
+  File "/usr/local/lib/python3.8/dist-packages/requests/api.py", line 110, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/requests/api.py", line 56, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=6004): Max retries exceeded with url: /coinshuffle/submitkey (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7feeb85c4c70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+127.0.0.1 - - [05/May/2022 17:48:15] "POST /coinshuffle/new HTTP/1.1" 500 -
+127.0.0.1 - - [05/May/2022 17:49:08] "POST /coinshuffle/new HTTP/1.1" 201 -
+127.0.0.1 - - [05/May/2022 17:49:12] "POST /coinshuffle/new HTTP/1.1" 201 -
+[2022-05-05 17:49:33,734] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:49:33] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:49:33,744] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:49:33] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+127.0.0.1 - - [05/May/2022 17:51:22] "POST /coinshuffle/new HTTP/1.1" 201 -
+127.0.0.1 - - [05/May/2022 17:51:24] "POST /coinshuffle/new HTTP/1.1" 201 -
+[2022-05-05 17:52:07,192] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:52:07] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:52:20,744] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:52:20] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:52:30,440] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:52:30] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 17:52:36,838] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:52:36] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+127.0.0.1 - - [05/May/2022 17:57:10] "POST /coinshuffle/new HTTP/1.1" 201 -
+[2022-05-05 17:57:27,979] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 17:57:27] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:00:47,195] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:00:47] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:00:47,203] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:00:47] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:00:47,212] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:00:47] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:00:47,220] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:00:47] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:35:35,073] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:35:35] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:45:06,107] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:45:06] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:45:06,116] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:45:06] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:45:06,126] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:45:06] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:45:06,134] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:45:06] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 18:55:28,181] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 18:55:28] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:00:24,311] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:00:24] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:00:24,321] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:00:24] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:00:24,331] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:00:24] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:00:24,341] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:00:24] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:13:15,949] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:13:15] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:24:04,528] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:24:04] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:24:04,539] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:24:04] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+[2022-05-05 19:24:04,561] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:24:04] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+AlicePrime
+b'AlicePrime'
+b'ce96aac29ac7c472e4dc09bd974b1fc9bcafe3d8c144fcadb7275d5ac2e5a21c7ab4076eb0446a956d8237ade906615d9fb117765f1cda6987d1e952e13599e6ba8067e098be25892bfd9afcb258ecae8731267598a1e84cb88ffdf5a47cca49539796c6a38955b92eac2151dcd77706c51c67176bdf0979b93ae7a8b8f9694e'
+b"b'ce96aac29ac7c472e4dc09bd974b1fc9bcafe3d8c144fcadb7275d5ac2e5a21c7ab4076eb0446a956d8237ade906615d9fb117765f1cda6987d1e952e13599e6ba8067e098be25892bfd9afcb258ecae8731267598a1e84cb88ffdf5a47cca49539796c6a38955b92eac2151dcd77706c51c67176bdf0979b93ae7a8b8f9694e'"
+AlicePrime
+b'AlicePrime'
+b'5633970e696579b4b8a82255c7dea1ddd9d78e9c26e8a6b7d3b8f138c2428743c3042bcc92eebde09b352cbed2d06b77aaf2671417cb039336f8fdee7c603a4b4f8c5ceef312efaafb1534a372c79f9c90fe6757af6ced4c1009f089d5cb67f5ffe25fb0be21c0581377f518ddbe1ef7e93e721be05690054916fd865112c3f1'
+b"b'5633970e696579b4b8a82255c7dea1ddd9d78e9c26e8a6b7d3b8f138c2428743c3042bcc92eebde09b352cbed2d06b77aaf2671417cb039336f8fdee7c603a4b4f8c5ceef312efaafb1534a372c79f9c90fe6757af6ced4c1009f089d5cb67f5ffe25fb0be21c0581377f518ddbe1ef7e93e721be05690054916fd865112c3f1'"
+AlicePrime
+b'AlicePrime'
+b'0664ad850ae58d1e4d947dd5d9f46c6499849dfcf3eb425728e47d909dc31f7ab125daf98913a9e0745563542d2a527424f4ef7d59ce32207d527034b2064aa0d6dad723bbba8a52a9a6ccefdb590df0b3f55b95f349ca9298751caed587a01dba3429841da9d70990b9666682a6b8a281a75a9a38bc8294bd78ba296da59ac6'
+b"b'0664ad850ae58d1e4d947dd5d9f46c6499849dfcf3eb425728e47d909dc31f7ab125daf98913a9e0745563542d2a527424f4ef7d59ce32207d527034b2064aa0d6dad723bbba8a52a9a6ccefdb590df0b3f55b95f349ca9298751caed587a01dba3429841da9d70990b9666682a6b8a281a75a9a38bc8294bd78ba296da59ac6'"
+AlicePrime
+b'AlicePrime'
+b'5121f1de7c9000196a2eeae31491add5312d98d6932c95339e49177e040e80c66a6a30d47e7cc301ce489843511c4ceb255e9876becec7e40b2c64b88e36d81b5bc38dded3d28979117727df3904778b8546e37f5a6aa5da6e9467d12ecc52e334a828ecc2e767a7dd7414550f8a23f8f88925cc2ed9d4b74238da772f95f6db'
+b"b'5121f1de7c9000196a2eeae31491add5312d98d6932c95339e49177e040e80c66a6a30d47e7cc301ce489843511c4ceb255e9876becec7e40b2c64b88e36d81b5bc38dded3d28979117727df3904778b8546e37f5a6aa5da6e9467d12ecc52e334a828ecc2e767a7dd7414550f8a23f8f88925cc2ed9d4b74238da772f95f6db'"
+AlicePrime
+b'AlicePrime'
+b'67beaebdfbedb43d610325ee50171ebe11119f2107fbf8da96a7a1f74a32304bed79b461416d6977de22e3c6bc88f5bdb7430b2be47b916ba4feb10ef95718222e5e1728c55e39ea4eb6d0c93847b6671a788309e36348df88c929ce1e10bee85c8a3aa7d8508beda6a450f95a4976e5461be9a5a33891c32106b42271bd8a31'
+b"b'67beaebdfbedb43d610325ee50171ebe11119f2107fbf8da96a7a1f74a32304bed79b461416d6977de22e3c6bc88f5bdb7430b2be47b916ba4feb10ef95718222e5e1728c55e39ea4eb6d0c93847b6671a788309e36348df88c929ce1e10bee85c8a3aa7d8508beda6a450f95a4976e5461be9a5a33891c32106b42271bd8a31'"
+AlicePrime
+b'AlicePrime'
+b'2422fe5da2084f43bd203b166ba58db891af09cf139764d24e3999b9a65d8394291292f1f7168c22cc72f1d4432b8ddb61fc919e2a8f11c00c4ff79c6958ac39b074145cffab467e18ffc45e83ae682984d11aaf913b1f48a17f5939856f40343b585cf475cba43948f666ebd02e743d9755d68727147d39f1c0a62b0ef5789c'
+b"b'2422fe5da2084f43bd203b166ba58db891af09cf139764d24e3999b9a65d8394291292f1f7168c22cc72f1d4432b8ddb61fc919e2a8f11c00c4ff79c6958ac39b074145cffab467e18ffc45e83ae682984d11aaf913b1f48a17f5939856f40343b585cf475cba43948f666ebd02e743d9755d68727147d39f1c0a62b0ef5789c'"
+AlicePrime
+b'AlicePrime'
+b'4053c45480db1997cdc647f42a626b6d2ee2a3456e425110b1a6513d13947f11c038879008926b984e9cb0c7efb6bdd48f9b062ba938b7c09480e89b75f81e549a985fec72563adeb2e1813e60532d1c59ce0326e8d4e61f63dd10e08c0eec4cc25974a83aece5b85b75704c94627db791515fd50d807ff296baa6c64419a19f'
+b"b'4053c45480db1997cdc647f42a626b6d2ee2a3456e425110b1a6513d13947f11c038879008926b984e9cb0c7efb6bdd48f9b062ba938b7c09480e89b75f81e549a985fec72563adeb2e1813e60532d1c59ce0326e8d4e61f63dd10e08c0eec4cc25974a83aece5b85b75704c94627db791515fd50d807ff296baa6c64419a19f'"
+AlicePrime
+b'AlicePrime'
+b'241dd5a08e74bfa524e9d5026f05d47476b3a4bc67cfa74f4d0fc5a309ba58fd3d0bb81cf1657cebe34902006cbd863dc1ae0c699ab813ff06d7cf5d074d542268fdfed35e47d5d6c32be3127049dcb81a1dc0d0925cc30832d3e0a4d29e0efd6547c8dee9cca4e302cd5e8051fe09ba42c26039c9757c81e98c731831866f03'
+b"b'241dd5a08e74bfa524e9d5026f05d47476b3a4bc67cfa74f4d0fc5a309ba58fd3d0bb81cf1657cebe34902006cbd863dc1ae0c699ab813ff06d7cf5d074d542268fdfed35e47d5d6c32be3127049dcb81a1dc0d0925cc30832d3e0a4d29e0efd6547c8dee9cca4e302cd5e8051fe09ba42c26039c9757c81e98c731831866f03'"
+AlicePrime
+b'AlicePrime'
+b'9244468a693caa87240dc2a4eda2666f073512a8ca46e6cd27342f9a069cfd136a79f6e9c4ce3ceb6e5784d6c62aea48437a438094c263e1d8c275c8c798e5ab05be3e4d1dee39bb66cc1a34bcb7142e1a99d39049d3ba77888c8f3835a07d4d344535bd83f3da68dee2d7d5ae95550e4120482dcf9f5f5d7310e489cde1cdc3'
+b"b'9244468a693caa87240dc2a4eda2666f073512a8ca46e6cd27342f9a069cfd136a79f6e9c4ce3ceb6e5784d6c62aea48437a438094c263e1d8c275c8c798e5ab05be3e4d1dee39bb66cc1a34bcb7142e1a99d39049d3ba77888c8f3835a07d4d344535bd83f3da68dee2d7d5ae95550e4120482dcf9f5f5d7310e489cde1cdc3'"
+AlicePrime
+b'AlicePrime'
+b'1b2c5c5ddc53a3dd1ca93ae4bd147eb12668a36d6443ffb4609709899c9cd485a6c50779dcb729f4cf65d7a164a01df48c09693f306832891031f8ac6c479a8e83c97ac086b494d41ef4e15322c3c375c9a991ae2f0280030a2e31a7593436f227564a16fda6b50fa2d7399f561c028b0d335cffcf56ccef2bb2806269187a2c'
+b"b'1b2c5c5ddc53a3dd1ca93ae4bd147eb12668a36d6443ffb4609709899c9cd485a6c50779dcb729f4cf65d7a164a01df48c09693f306832891031f8ac6c479a8e83c97ac086b494d41ef4e15322c3c375c9a991ae2f0280030a2e31a7593436f227564a16fda6b50fa2d7399f561c028b0d335cffcf56ccef2bb2806269187a2c'"
+AlicePrime
+b'AlicePrime'
+b'2e31fa4afa36af9614d9e58de9d81c9023bb6224101665e7dfdc0ce990413910db23221eae99d6b4fda4f217ef4facbf7dfe2bbd3de4393edad0d8bcb3aee9ead0bb6fdb0ecf4f66cf040bd09150e54968c84789303f3a6899c53741ed19c334fbbfcc0861449810501e82e95287e9b6af158867207f50ccd8312e9da5653cba'
+b"b'2e31fa4afa36af9614d9e58de9d81c9023bb6224101665e7dfdc0ce990413910db23221eae99d6b4fda4f217ef4facbf7dfe2bbd3de4393edad0d8bcb3aee9ead0bb6fdb0ecf4f66cf040bd09150e54968c84789303f3a6899c53741ed19c334fbbfcc0861449810501e82e95287e9b6af158867207f50ccd8312e9da5653cba'"
+AlicePrime
+b'AlicePrime'
+b'39e430e482b2e5b9248571d56ab9109ddf87966caa0deac3799a0581444cf393583d095e5f93236bafb0e075e16a6ba1577328024315e696c8c1726de28920d3861fd1748da54998ccc79d595d2b073cac5ee178ba000580edd67307c5f31f112fb126408cfedbbd830e477e4bafb76a4d7029dca3ce268eceb29e926387d998'
+b"b'39e430e482b2e5b9248571d56ab9109ddf87966caa0deac3799a0581444cf393583d095e5f93236bafb0e075e16a6ba1577328024315e696c8c1726de28920d3861fd1748da54998ccc79d595d2b073cac5ee178ba000580edd67307c5f31f112fb126408cfedbbd830e477e4bafb76a4d7029dca3ce268eceb29e926387d998'"
+AlicePrime
+b'AlicePrime'
+b'86c41fff9b8fc8c9b3a274aa88fd64f548ea6cbb5b2f1b5196d63f8d5a3ddabe38165d205650bbef8e29ec421a9431334e90620f00ce2734bb87f452ac07762c83853ffc3801299066fc712ad1203df765eeade9385f6ebf06009ba56436872fc4223c3e78148cbfbff262af2be864a240edc87e50d6920979f22e772a961b11'
+b"b'86c41fff9b8fc8c9b3a274aa88fd64f548ea6cbb5b2f1b5196d63f8d5a3ddabe38165d205650bbef8e29ec421a9431334e90620f00ce2734bb87f452ac07762c83853ffc3801299066fc712ad1203df765eeade9385f6ebf06009ba56436872fc4223c3e78148cbfbff262af2be864a240edc87e50d6920979f22e772a961b11'"
+AlicePrime
+b'AlicePrime'
+b'548082ee3bb5a726cc59f504124360cf66bfd1e5c6b347e52bace9b2220b8e8fd8a068138718e13cf67344af77966f6cb3b222dea56bce5918d67195f166b6dd8cbbbe00e098a4d8d9ead356fb1dcd7c0cbff2c23f879deb401dad43e74de5e01b594908c6fe61ca5e7bcaa1e2f93c042d06a1c0cfa92df72742d524b0f1611c'
+b"b'548082ee3bb5a726cc59f504124360cf66bfd1e5c6b347e52bace9b2220b8e8fd8a068138718e13cf67344af77966f6cb3b222dea56bce5918d67195f166b6dd8cbbbe00e098a4d8d9ead356fb1dcd7c0cbff2c23f879deb401dad43e74de5e01b594908c6fe61ca5e7bcaa1e2f93c042d06a1c0cfa92df72742d524b0f1611c'"
+AlicePrime
+b'AlicePrime'
+b'04f009a6edd7e8850d91fd56679f1a5bc9a700f9fea4cf770a8f3f210a70a05d994616a8a53345c2cf5cd27f9743a91de12deed33149730a83c7df31448e3c7b028b6a44a7de81a5b372d95b42c44b70674f0fbfd9f4d2657206f0c643fbe4eb24a2e582776756d90c33eb29a74e038677d94cd58e3db8c69d2051019f3937c5'
+[2022-05-05 19:24:04,573] ERROR in app: Exception on /coinshuffle/initiate [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "client.py", line 110, in post
+    node.coin_shuffler.start(json.loads(args['peers']), json.loads(args['order']))
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 83, in start
+    self.encrypted_target = self._encrypt_dest()
+  File "/home/luke/Projects/coinshuffle/coin_shuffle.py", line 120, in _encrypt_dest
+    t = util.encrypt(self.order[str(i)], t)
+  File "/home/luke/Projects/coinshuffle/util.py", line 30, in encrypt
+    return hexlify(cipher.encrypt(str(msg).encode()))
+  File "/usr/lib/python3/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 128, in encrypt
+    raise ValueError("Plaintext is too long.")
+ValueError: Plaintext is too long.
+127.0.0.1 - - [05/May/2022 19:24:04] "POST /coinshuffle/initiate HTTP/1.1" 500 -
+127.0.0.1 - - [05/May/2022 19:45:38] code 400, message Bad request version ('\x98Ð')
+127.0.0.1 - - [05/May/2022 19:45:38] "l        MIT-MAGIC-COOKIE-1  KàY./gùa±	Ð" HTTPStatus.BAD_REQUEST -
