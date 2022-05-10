@@ -5,6 +5,7 @@ import Crypto
 import util
 import json
 import requests
+import sys
 
 class CoinShuffleServer:
     def __init__(self):
@@ -93,8 +94,10 @@ class CoinShuffleClient:
         return self.peers[self.order[str(self.index + 1)]]
 
     def _find_index(self, order):
+        print("Self: " + str(self.ek))
         for i,ek in order.items():
-            if self.ek == ek:
+            print("O: " + str(i) + " ->" + str(ek))
+            if str(self.ek.decode("utf-8")) == str(ek):
                 return i
         return -1
 
@@ -117,7 +120,8 @@ class CoinShuffleClient:
         t = self.hidden_target
         for i in range(self.num_peers-1,self.index,-1):
             print(t)
-            t = util.encrypt(self.order[str(i)], t)
+            t = util.encrypt(self.order[str(i)], str(t))
+            print("Encrypted: " + str(t))
         return t
 
     def perform_shuffle(self, sources, data):
@@ -127,11 +131,23 @@ class CoinShuffleClient:
         assert self.index == len(data)
         data = self._decrypt_data(data)
         data[str(self.index)] = {
-            "public_key": self.ek,
+            "public_key": self.ek.decode("utf-8"),
             "target": self.encrypted_target
         }
         sources[str(self.index)] = {"source": self.source}
         data = self._shuffle_data(data)
+        ########################################test json for validity
+        try:
+            json.dumps(data)
+        except:
+            reason = 'Error: %s - %s' % sys.exc_info()[:2]
+            print(reason)
+        try:
+            json.dumps(sources)
+        except:
+            reason = 'Error: %s - %s' % sys.exc_info()[:2]
+            print(reason)
+        ###############################################################
         if self.index == self.num_peers - 1:
             self.construct_transactions(sources, data)
         else:
