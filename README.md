@@ -5,7 +5,7 @@ Compiling
 ---------
 mkvirtualenv [environment name]
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 You may now run any tests or create scripts of your own.
 
@@ -45,7 +45,16 @@ Client Interface
 
 /coinshuffle/initiate -- [GET] start a coinshuffle round with a specified list of peers
 
-Future Work
+Tests
 -----------
-Verification of transactions
-Separate wallet and agents
+Run python3 ./test_shuffle.sh to execute a full coin shuffle
+
+Run python3 ./hybridenc.py to test the RSA/AES encryption methods used in util.py
+
+Run test_kill.sh to terminate any running client/server instances
+
+Run test_launch_clients.sh to start a couple of client nodes (already included in test_shuffle)
+
+Run test_simple.sh to test mining the chain
+
+Run test_chain.sh to test the simulated blockchain

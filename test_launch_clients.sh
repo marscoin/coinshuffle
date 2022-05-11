@@ -6,7 +6,7 @@ c2=${c}2
 c3=${c}3
 s4=${c}4
 
-#nohup python3 client.py -p 6000 --peers $c1 $c2 &
+nohup python3 client.py -p 6000 --peers $c1 $c2 &
 nohup python3 client.py -p 6001 --peers $c2 $c0 &
 nohup python3 client.py -p 6002 --peers $c0 $c1 &
 
